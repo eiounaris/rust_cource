@@ -1,0 +1,38 @@
+[package]
+name = "rust_cource"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.140"
+rand = "0.9.1"
+tokio = { version = "1.45.1", features = ["full"] }
+prost = "0.13"
+tonic = "0.13.1"
+tokio-stream = "0.1.17"
+async-stream = "0.3.6"
+log = "0.4.27"
+env_logger = "0.11.8"
+
+
+[build-dependencies]
+prost-build = "0.13.5"
+tonic-build = "0.13.1"
+
+
+[[bin]]
+name = "prost-demo"
+path = "src/bin/prost-demo/main.rs"
+
+[[bin]]
+name = "tonic-server"
+path = "src/bin/tonic-demo/server.rs"
+
+[[bin]]
+name = "tonic-client"
+path = "src/bin/tonic-demo/client.rs"
+
+[[bin]]
+name = "log"
+path = "src/bin/log/main.rs"
