@@ -9,11 +9,12 @@ serde_json = "1.0.140"
 rand = "0.9.1"
 tokio = { version = "1.45.1", features = ["full"] }
 prost = "0.13"
-tonic = "0.13.1"
+tonic = {version = "0.13.1", features = ["tls-ring"]}
 tokio-stream = "0.1.17"
 async-stream = "0.3.6"
 log = "0.4.27"
 env_logger = "0.11.8"
+ansi_term = "0.12.1"
 
 
 [build-dependencies]
@@ -34,5 +35,21 @@ name = "tonic-client"
 path = "src/bin/tonic-demo/client.rs"
 
 [[bin]]
-name = "log"
-path = "src/bin/log/main.rs"
+name = "tonic-tls-server"
+path = "src/bin/tonic-tls-demo/server.rs"
+
+[[bin]]
+name = "tonic-tls-client"
+path = "src/bin/tonic-tls-demo/client.rs"
+
+[[bin]]
+name = "tonic-tls-endpoint-server"
+path = "src/bin/tonic-tls-endpoint-demo/server.rs"
+
+[[bin]]
+name = "tonic-tls-endpoint-client"
+path = "src/bin/tonic-tls-endpoint-demo/client.rs"
+
+[[bin]]
+name = "env_logger"
+path = "src/bin/env_logger-demo/main.rs"
